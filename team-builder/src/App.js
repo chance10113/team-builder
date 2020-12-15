@@ -1,15 +1,26 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import TeamBuildForm from './Form'
-import axios from "./FakeData"
+import TeamBuildForm from './componets/Form'
+import data from './FakeData'
+import TeamMate from './componets/TeamMate'
 const initialFromValues = { name: '', email: '', role: ''}
 
 function App() {
-  const [ teamList, setTeamList ] = useState([])
+  const [ teamList, setTeamList ] = useState(data)
   const [formValues, setFormValues] = useState(initialFromValues)
   return (
     <div>
-      {teamList}
+      <h1> This is where the stuff is displaying </h1>
+
+      {/* <TeamBuildForm
+        values={formValues}
+        update={updateForm}
+        submit={submitForm}
+        /> */}
+
+        {teamList.map((teamMate) => {
+          return <TeamMate key={teamMate.id} details={teamMate} />
+        })}
     </div>
     
     );
