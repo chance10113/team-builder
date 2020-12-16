@@ -8,6 +8,21 @@ const initialFromValues = { name: '', email: '', role: ''}
 function App() {
   const [ teamList, setTeamList ] = useState(data)
   const [formValues, setFormValues] = useState(initialFromValues)
+
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({
+      ...formValues, [inputName]: inputValue,
+    });
+  };
+
+  const submitForm = () => {
+    const teamMate = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      role: formValues.role,
+    }
+  }
+
   return (
     <div>
       <h1> This is where the stuff is displaying </h1>
