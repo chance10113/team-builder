@@ -1,15 +1,15 @@
-import {v4 as uuid} from 'uuid'
+import { v4 as uuid } from "uuid";
 
 // //This is where we creatae the fake Team List, because that seems to be what we need to do maybe?
 
 const initialTeamList = [
-    { id: uuid(), name: 'Sue', email: 'Sue@mail.com', role: 'Instructor'},
-    { id: uuid(), name: 'Dan', email: 'Dan@mail.com', role: 'Student'},
-    { id: uuid(), name: 'Sal', email: 'Sal@mail.com', role: 'TL'},
-    { id: uuid(), name: 'Dib', email: 'Dib@mail.com', role: 'Student'},
-]
+  { id: uuid(), name: "Sue", email: "Sue@mail.com", role: "Demolitions" },
+  { id: uuid(), name: "Dan", email: "Dan@mail.com", role: "Procurement" },
+  { id: uuid(), name: "Sal", email: "Sal@mail.com", role: "Leader" },
+  { id: uuid(), name: "Dib", email: "Dib@mail.com", role: "Procurement" },
+];
 
-export default  initialTeamList
+export default initialTeamList;
 
 // //Gotta sim the Axios get and post!
 
