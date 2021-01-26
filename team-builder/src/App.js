@@ -1,11 +1,12 @@
 import "./App.css";
 import React, { useState } from "react";
-import Form from "./Components/Form";
-import teamData from "./FakeTeamData"
+import TeamBuildForm from "./Components/Form";
+import teamData from "./FakeTeamData";
+import TeamMate from "./Components/TeamProto";
 const initialFormValues = { name: "", email: "", role: "" };
 
 function App() {
-  const [teamList, setTeamList] = useState();
+  const [teamList, setTeamList] = useState(teamData);
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const updateForm = (inputName, inputValue) => {
@@ -34,35 +35,22 @@ function App() {
         console.log("Something Broke!", beef);
       });
   };
+
   return (
     <div>
-      <h1> Descriptive Page Title</h1>
+      <h1> This is where the stuff is displaying </h1>
 
-      <Form
+      <TeamBuildForm
         values={formValues}
         update={updateForm}
-         submit={submitForm}
+        submit={submitForm}
       />
+
+      {teamList.map((teamMate) => {
+        return <TeamMate key={teamMate.id} details={teamMate} />;
+      })}
     </div>
   );
 }
 
 export default App;
-
-// import logo from './logo.svg';
-// <div className="App">
-//   <header className="App-header">
-//     <img src={logo} className="App-logo" alt="logo" />
-//     <p>
-//       Edit <code>src/App.js</code> and save to reload.
-//     </p>
-//     <a
-//       className="App-link"
-//       href="https://reactjs.org"
-//       target="_blank"
-//       rel="noopener noreferrer"
-//     >
-//       Learn React
-//     </a>
-//   </header>
-// </div>

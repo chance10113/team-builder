@@ -15,7 +15,7 @@ export default function TeamBuildForm(props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <div classname="form-inputs">
+      <div className="form-inputs">
         <label>
           Name
           <input
